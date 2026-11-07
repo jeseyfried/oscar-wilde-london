@@ -108,11 +108,14 @@
   function refresh() {
     ringLayer.clearLayers();
     var shown = [];
+    // when exactly one theme is on, colour every marker in that theme's colour
+    var onLayers = O.LAYERS.filter(function (l) { return state.layers[l.id]; });
+    var soloColor = onLayers.length === 1 ? onLayers[0].c : null;
     O.PLACES.forEach(function (p) {
       var m = markers[p.id], vis = visible(p), on = inYear(p);
       if (vis && !state.walk) {
         if (!map.hasLayer(m)) m.addTo(map);
-        m.setStyle({ fillOpacity: on ? .92 : .12, opacity: on ? 1 : .25 });
+        m.setStyle({ fillColor: soloColor || O.color(p), fillOpacity: on ? .92 : .12, opacity: on ? 1 : .25 });
         if (on) shown.push(p);
         if (hasEvent(p)) {
           var r = L.circleMarker(p.ll, { radius: 11, color: O.color(p), weight: 2, fill: false, interactive: false, className: O.still() ? '' : 'pulse' });
@@ -140,7 +143,7 @@
       return ea - eb || a.n.localeCompare(b.n);
     });
     list.innerHTML = sorted.map(function (p) {
-      return '<li><button type="button" data-id="' + p.id + '"' + (p.id === state.sel ? ' aria-current="true"' : '') + ' style="--c:' + O.color(p) + '">' +
+      return '<li><button type="button" data-id="' + p.id + '"' + (p.id === state.sel ? ' aria-current="true"' : '') + ' style="--c:' + (soloColor || O.color(p)) + '">' +
         '<span class="dot"></span><span><span class="nm">' + esc(p.n) + '</span><span class="yr">' + esc(O.LAYER[p.L[0]].n) + ' · ' + O.yearsLabel(p) + (hasEvent(p) ? ' · <b>' + state.year + '</b>' : '') + '</span></span></button></li>';
     }).join('');
     var msg = sorted.length + ' place' + (sorted.length === 1 ? '' : 's');
@@ -284,7 +287,22 @@
   });
   card.addEventListener('click', function (e) { var a = e.target.closest('.card__empty [data-goto]'); if (a) { e.preventDefault(); select(a.getAttribute('data-goto'), { fly: true }); } });
 
-  O.explorer = { select: select, startWalk: startWalk, showPerson: showPerson, setYear: setYear, map: map };
+  // show one theme on its own (used by the Themes section above the map)
+  function showTheme(id, opt) {
+    opt = opt || {};
+    if (!O.LAYER[id]) return;
+    stopWalk(); stopPlay();
+    O.LAYERS.forEach(function (l) { state.layers[l.id] = l.id === id; });
+    state.q = ''; qEl.value = ''; state.person = null;
+    paintChips();
+    if (state.year != null) setYear(null); else refresh();
+    if (opt.fit !== false) {
+      var pts = O.PLACES.filter(function (p) { return p.L.indexOf(id) >= 0; }).map(function (p) { return p.ll; });
+      if (pts.length) map.fitBounds(L.latLngBounds(pts).pad(.08), { maxZoom: 15, animate: !O.still() });
+    }
+  }
+
+  O.explorer = { select: select, startWalk: startWalk, showPerson: showPerson, setYear: setYear, showTheme: showTheme, map: map };
 
   refresh();
   // deep links: #place=id or #walk=id&stop=n

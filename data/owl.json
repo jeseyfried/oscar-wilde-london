@@ -2,6 +2,368 @@
  "title": "Oscar Wilde's London",
  "period": "1879-1897",
  "source_book": "Wolf Von Eckardt, Sander L. Gilman and J. Edward Chamberlin, Oscar Wilde's London: A Scrapbook of Vices and Virtues, 1880–1900 (Garden City, NY: Anchor Press/Doubleday, 1987).",
+ "themes": [
+  {
+   "id": "wilde",
+   "name": "Wilde's footsteps",
+   "source_chapters": "Introduction and chapter 1, 'Art and Life' (pp. 1–27)",
+   "summary": "Wilde's London was a westward arc, from rooms off the Strand to a house in Chelsea, with a daily round through Piccadilly, St James's and the West End theatres. In 1895 the same map turned into a route through police courts and prisons.",
+   "text": [
+    "He arrived in the autumn of 1879 and took rooms with the painter Frank Miles at 13 Salisbury Street, a lane running down from the Strand to the river, among the theatres and a short walk from the newspapers of Fleet Street. Within a year the two men had moved west to Tite Street in Chelsea, where Whistler, Godwin and Sargent were building and painting beside the Thames. Wilde married Constance Lloyd in 1884 at St James's, Sussex Gardens, near her family's home at Lancaster Gate in Bayswater, and the couple settled at 16 Tite Street, his home until 1895. His mother lived nearby in Oakley Street. From Chelsea his day ran east: the Café Royal on Regent Street, the clubs and hotels of St James's and Albemarle Street, and the St James's and Haymarket theatres, where his four society comedies opened between 1892 and 1895.",
+    "In the spring of 1895 the map turns inside out. The card the Marquess of Queensberry left at the Albemarle Club led to Queensberry's committal at Marlborough Street police court and to the libel trial at the Old Bailey. Wilde was then arrested at the Cadogan Hotel, charged at Bow Street and held on remand in Holloway. After the two criminal trials he went to Pentonville and Wandsworth, and in November he stood in convict dress on the platform at Clapham Junction on his way to Reading. These were the institutions on the city's edge, far from the West End front doors he knew. On 19 May 1897 he walked out of Pentonville to Stewart Headlam's house in Bloomsbury, and that night he took the boat to Dieppe."
+   ],
+   "start_places": [
+    {
+     "id": "salisbury-st",
+     "note": "First rooms, shared with Frank Miles, 1879"
+    },
+    {
+     "id": "tite-16",
+     "note": "The family home, 1884–95"
+    },
+    {
+     "id": "st-james-theatre",
+     "note": "Lady Windermere's Fan and Earnest"
+    },
+    {
+     "id": "albemarle-club",
+     "note": "Queensberry's card, February 1895"
+    },
+    {
+     "id": "cadogan-hotel",
+     "note": "Wilde's arrest, 5 April 1895"
+    },
+    {
+     "id": "clapham-junction",
+     "note": "Mocked on the platform, November 1895"
+    }
+   ]
+  },
+  {
+   "id": "queer",
+   "name": "Queer London",
+   "source_chapters": "Chapter 12, 'Juliets of a Night' (pp. 238–261), with the histories of queer London in the bibliography",
+   "summary": "Queer London had a geography before it had a name: the promenades, arcades, restaurants and baths of the West End, all within a walk of Wilde's clubs and theatres, and the courts and newspapers that exposed them.",
+   "text": [
+    "Men who desired men met in plain sight. The colonnade of the Quadrant on Regent Street, Piccadilly, Burlington Arcade, the promenade of the Empire in Leicester Square and the paths of Hyde Park near the Knightsbridge Barracks, where guardsmen made extra money, were all known meeting grounds. The Jermyn Street Turkish bath was a male world of its own. The 1895 trials gave this map its best-known addresses: the private rooms of Kettner's and the Solferino in Soho, where Alfred Taylor introduced Wilde to young men, the Savoy and Albemarle hotels, and Taylor's curtained rooms in Little College Street, behind Westminster Abbey.",
+    "The layer also traces how the law closed in. Ernest Boulton and Frederick Park were arrested in women's dress at the Strand Theatre in 1870. The painter Simeon Solomon was arrested off Oxford Street in 1873. The Cleveland Street scandal of 1889 ran from a house in Fitzrovia to the Central Telegraph Office in the City and the Marlborough Club on Pall Mall. In 1885 Parliament had passed the Labouchère amendment, which made any 'gross indecency' between men a crime, in public or in private, and which was used to convict Wilde. After 1895 queer London went quieter: in 1897 George Ives founded the secret Order of Chaeronea from Primrose Hill. Women's networks, such as the poet Amy Levy's in Bloomsbury, left fainter traces on the map."
+   ],
+   "start_places": [
+    {
+     "id": "regent-quadrant",
+     "note": "A meeting ground under the colonnade"
+    },
+    {
+     "id": "kettners",
+     "note": "Private rooms and the Parker brothers"
+    },
+    {
+     "id": "little-college",
+     "note": "Behind Westminster Abbey, 1892–93"
+    },
+    {
+     "id": "strand-theatre",
+     "note": "An arrest in women's dress, 1870"
+    },
+    {
+     "id": "cleveland-st",
+     "note": "The telegraph boys' scandal, 1889"
+    },
+    {
+     "id": "chaeronea",
+     "note": "A secret society, 1897"
+    }
+   ]
+  },
+  {
+   "id": "stage",
+   "name": "Stage & song",
+   "source_chapters": "Chapter 3, 'Call of the Stage' (pp. 54–79), and chapter 9, 'Sounds of London' (pp. 178–199)",
+   "summary": "London's theatres crowded into about a square mile between the Strand and Leicester Square. Wilde set out to conquer them, and he was competing with the music halls for the same evening crowds.",
+   "text": [
+    "The Strand and the streets off it held the Lyceum, where Henry Irving and Ellen Terry played Shakespeare and melodrama; the Gaiety, home of burlesque and then of musical comedy; and the Savoy, built for Gilbert and Sullivan and the first public building in London lit entirely by electricity (1881). Patience, the opera that mocked Wilde's Aestheticism in 1881, ran at the Opera Comique nearby. West of Charing Cross, society drama gathered at the St James's and the Haymarket, where Wilde's comedies opened. The new Shaftesbury Avenue and Charing Cross Road added more theatres at the end of the 1880s, among them the Palace, where Salome was banned in rehearsal in 1892. Ibsen arrived at small houses on the margins: A Doll's House at the Novelty in Great Queen Street, Ghosts at the Royalty in Soho.",
+    "Around Leicester Square the Alhambra and the Empire offered ballet and variety, and in their promenades a good deal more. Further out, the music halls served their own neighbourhoods: the Canterbury in Lambeth, the first building designed as a music hall (1852); Sadler's Wells in Clerkenwell; and Emma Cons's temperance music hall at the Old Vic. On the map the West End's stalls and the working-class halls are a short walk apart, and Wilde's first nights shared the city with Dan Leno and Marie Lloyd."
+   ],
+   "start_places": [
+    {
+     "id": "lyceum",
+     "note": "Irving and Terry"
+    },
+    {
+     "id": "savoy-theatre",
+     "note": "Gilbert and Sullivan, and electric light"
+    },
+    {
+     "id": "haymarket",
+     "note": "A Woman of No Importance; An Ideal Husband"
+    },
+    {
+     "id": "palace-theatre",
+     "note": "Bernhardt in rehearsal, June 1892"
+    },
+    {
+     "id": "empire",
+     "note": "Ballet, variety and the promenade"
+    },
+    {
+     "id": "canterbury",
+     "note": "The first music hall, 1852"
+    }
+   ]
+  },
+  {
+   "id": "aesthetic",
+   "name": "Art & Aestheticism",
+   "source_chapters": "Chapter 2, 'Lilies and Sunflowers' (pp. 28–53)",
+   "summary": "Aestheticism lived in the west of the city. The artists lived in Chelsea and Kensington, and the galleries and shops that sold the look to everyone else were on Bond Street, Regent Street and Oxford Street.",
+   "text": [
+    "Chelsea's riverside was the movement's home. Rossetti and Swinburne lived at Tudor House on Cheyne Walk and Carlyle in Cheyne Row. Whistler painted the river from Lindsey Row, turning old Battersea Bridge and the fireworks at Cremorne into nocturnes. Godwin built Whistler the White House in Tite Street, and Wilde followed them into the street. In Kensington and Holland Park, successful painters built studio palaces, such as Leighton's house with its Arab Hall. In Prince's Gate, Whistler painted the Peacock Room for the shipowner Frederick Leyland. The South Kensington Museum served as the nation's school of design.",
+    "The West End was where Aestheticism became a style anyone could buy. The Grosvenor Gallery on New Bond Street showed Burne-Jones and Whistler from 1877, and Wilde reviewed its opening exhibition as an undergraduate. Liberty's on Regent Street sold the fabrics and the blue-and-white china, and Morris & Co. kept a showroom on Oxford Street. The suburbs built the look in red brick at Bedford Park, the first garden suburb, at Turnham Green. Upriver at Hammersmith, William Morris joined art to socialism at Kelmscott House. Nothing in this layer lies east of St Paul's."
+   ],
+   "start_places": [
+    {
+     "id": "white-house",
+     "note": "Godwin's house for Whistler"
+    },
+    {
+     "id": "lindsey-row",
+     "note": "Where the nocturnes were painted"
+    },
+    {
+     "id": "grosvenor-gallery",
+     "note": "'Greenery-yallery', from 1877"
+    },
+    {
+     "id": "liberty",
+     "note": "The art warehouse, 1875"
+    },
+    {
+     "id": "leighton-house",
+     "note": "A painter's palace"
+    },
+    {
+     "id": "kelmscott",
+     "note": "Morris, socialism and the Press"
+    }
+   ]
+  },
+  {
+   "id": "letters",
+   "name": "Readers & writers",
+   "source_chapters": "Chapter 4, 'Readers and Writers' (pp. 80–96)",
+   "summary": "Literary London ran along one line, the Strand and Fleet Street, from the publishers of the West End to the presses of Ludgate Hill. In the 1890s the newest writing moved west, to Vigo Street and Bloomsbury.",
+   "text": [
+    "Wilde made his living from print long before his plays paid. He reviewed for the Pall Mall Gazette, whose offices stood just off the Strand. From 1887 to 1889 he edited The Woman's World for Cassell's at La Belle Sauvage on Ludgate Hill. He published The Picture of Dorian Gray as a book with Ward, Lock, off Fleet Street. Fleet Street was the newspaper industry's own street, and in Wine Office Court the Cheshire Cheese was where Yeats, Dowson, Lionel Johnson and the Rhymers' Club read their poems to each other. The Strand had the bookshops, and Holywell Street behind it had the trade in pornography.",
+    "In the 1890s the new literature moved west. John Lane and Elkin Mathews's Bodley Head in Vigo Street, off Regent Street, published Wilde's Salome and The Sphinx, and then The Yellow Book. Leonard Smithers sold decadence and erotica from the Royal Arcade off Bond Street. Bloomsbury supplied the readers and the New Women writers: the British Museum Reading Room was where Amy Levy, Eleanor Marx and Bernard Shaw worked. The new Charing Cross Road, opened in 1887, filled with secondhand booksellers. Reading this layer from east to west traces the shift from Victorian journalism to the little magazines of the fin de siècle."
+   ],
+   "start_places": [
+    {
+     "id": "pall-mall-gazette",
+     "note": "Wilde's reviews and Stead's campaigns"
+    },
+    {
+     "id": "woman-world",
+     "note": "Wilde as editor, 1887–89"
+    },
+    {
+     "id": "cheshire-cheese",
+     "note": "Where Yeats, Dowson and Johnson read"
+    },
+    {
+     "id": "bodley-head",
+     "note": "Salome, The Sphinx and Beardsley"
+    },
+    {
+     "id": "british-museum",
+     "note": "Where the New Women wrote"
+    },
+    {
+     "id": "holywell-st",
+     "note": "The pornography trade"
+    }
+   ]
+  },
+  {
+   "id": "growth",
+   "name": "The growing city",
+   "source_chapters": "Chapter 5, 'London's Growth' (pp. 97–125), and chapter 6 (pp. 126–145)",
+   "summary": "Between 1879 and 1897 London rebuilt itself, with new streets, new railways under and over the ground, and suburbs for the millions who could now travel to work. This layer shows how the places in the other themes were joined up, and how fast they were changing.",
+   "text": [
+    "Wilde's London was a building site. The Victoria Embankment (1870) and the Chelsea Embankment (1874) walled in the Thames and carried Bazalgette's new sewers. Shaftesbury Avenue and Charing Cross Road were driven through the slums of St Giles and Soho in the late 1880s, and Northumberland Avenue filled with six-hundred-room hotels. Electric light came to the Savoy Theatre in 1881. Tower Bridge, opened in 1894, wrapped modern steel in Gothic stone. In 1889 the new London County Council gave the metropolis its first elected government.",
+    "Transport redrew the map. The Metropolitan Railway (1863) had opened the first underground line, and the Cheap Trains Act of 1883 required cheap workmen's fares, which carried working families out to new suburbs like Walthamstow and Tottenham. In 1890 the City and South London Railway opened the world's first deep electric tube, running from the City to Stockwell. The middle classes shopped at the new department stores, Whiteley's in Bayswater (where Wilde himself shopped) and Harrods in Knightsbridge. The ceremonial heart of the city, from Trafalgar Square to Buckingham Palace and Westminster Abbey, staged Victoria's two Jubilees, in 1887 and 1897."
+   ],
+   "start_places": [
+    {
+     "id": "embankment",
+     "note": "Bazalgette's river wall"
+    },
+    {
+     "id": "northumberland-ave",
+     "note": "The Grand, the Victoria, the Metropole"
+    },
+    {
+     "id": "baker-street",
+     "note": "The first underground, 1863"
+    },
+    {
+     "id": "stockwell",
+     "note": "The City and South London Railway, 1890"
+    },
+    {
+     "id": "tower-bridge",
+     "note": "Steel in Gothic dress, 1894"
+    },
+    {
+     "id": "whiteleys",
+     "note": "The Universal Provider"
+    }
+   ]
+  },
+  {
+   "id": "shame",
+   "name": "London's shame",
+   "source_chapters": "Chapter 6, '…And London's Shame' (pp. 126–145), and chapter 7, 'The Lower Classes' (pp. 146–166)",
+   "summary": "Slums lay a few hundred yards behind the West End's theatres. Two miles east was a city of docks, sweatshops and lodging houses, which the West End discovered with horror in the 1880s.",
+   "text": [
+    "Poverty was not only an East End matter. Seven Dials and Bedfordbury sat directly behind the theatres of Covent Garden, Lisson Grove behind Marylebone, and Fore Street in Lambeth across the river from Westminster. But the East End, from Whitechapel and Spitalfields to the docks at Poplar, became the great subject of the period. George Sims's How the Poor Live and Andrew Mearns's The Bitter Cry of Outcast London both appeared in 1883, and Charles Booth's survey coloured London street by street from wealth to want. Then came the Whitechapel murders of 1888, which turned these streets into a national spectacle.",
+    "The map also shows the responses. Jewish refugees from Eastern Europe landed at the river stairs and found shelter in Leman Street. From 1884 Toynbee Hall in Commercial Street brought university men to live among the poor, and from 1887 the People's Palace on the Mile End Road offered concerts and a library. Dr Barnardo photographed the children he took in at Stepney. Workers organised: the matchgirls struck at Bryant & May in Bow in 1888 and the dockers in 1889. In 1891 Wilde published his own answer, The Soul of Man under Socialism. The new London County Council cleared the Old Nichol in Shoreditch and built its first great housing estate on the site."
+   ],
+   "start_places": [
+    {
+     "id": "seven-dials",
+     "note": "The rookery behind the theatres"
+    },
+    {
+     "id": "commercial-st",
+     "note": "The university settlement, 1884"
+    },
+    {
+     "id": "leman-street",
+     "note": "Shelter for immigrants from Eastern Europe"
+    },
+    {
+     "id": "bryant-may",
+     "note": "The matchgirls' strike, 1888"
+    },
+    {
+     "id": "docks",
+     "note": "The dockers' tanner, 1889"
+    },
+    {
+     "id": "old-nichol",
+     "note": "Slum clearance and the first council estate"
+    }
+   ]
+  },
+  {
+   "id": "night",
+   "name": "Juliets of a night",
+   "source_chapters": "Chapter 12, 'Juliets of a Night' (pp. 238–261)",
+   "summary": "After dark the most fashionable streets in London became its most notorious market for sex. How that market was policed, and how it was reported, set the terms for Wilde's own prosecution.",
+   "text": [
+    "The guidebooks of the day, as the book shows, found 'Juliets of a night' all over the city. They were in Bond Street and Burlington Arcade; in the Haymarket, which smelled of hay by day; on the Strand; in the promenades of the Empire and the Alhambra; and down at the docks along the Ratcliffe Highway. Prostitution was the city's open secret, and it occupied the same West End streets as the theatres, restaurants and clubs. Contemporary estimates of the numbers involved ran as high as 80,000 women, and the figures themselves were weapons in moral campaigns.",
+    "In July 1885 W. T. Stead's 'Maiden Tribute of Modern Babylon' in the Pall Mall Gazette described the purchase of a thirteen-year-old girl in Marylebone. The outcry pushed through the Criminal Law Amendment Act, which raised the age of consent to sixteen and, through the Labouchère amendment, also criminalised sex between men. In 1888 the Whitechapel murders turned the poorest women of Spitalfields into a national spectacle. A year later the Cleveland Street scandal showed how the same laws, the same police and the same newspapers would treat men."
+   ],
+   "start_places": [
+    {
+     "id": "haymarket-street",
+     "note": "Hay by day, sex by night"
+    },
+    {
+     "id": "burlington-arcade",
+     "note": "A double life upstairs"
+    },
+    {
+     "id": "empire",
+     "note": "The promenade behind the circle"
+    },
+    {
+     "id": "pall-mall-gazette",
+     "note": "A campaign that changed the law, 1885"
+    },
+    {
+     "id": "ratcliffe-highway",
+     "note": "The sailors' high street"
+    },
+    {
+     "id": "millers-court",
+     "note": "The last Whitechapel murder, 1888"
+    }
+   ]
+  },
+  {
+   "id": "pleasure",
+   "name": "Pleasures & sport",
+   "source_chapters": "Chapter 10, 'Virtues of Sport' (pp. 200–218), and chapter 11, 'Jumbo and Sundry Diversions' (pp. 219–237)",
+   "summary": "Leisure had its own map. Clubs and restaurants filled St James's and the West End, while sport and mass entertainment went to the parks and suburbs, often at the end of a railway line.",
+   "text": [
+    "For a man of Wilde's set, pleasure meant St James's. There was clubland along Pall Mall and St James's Street, and the Marlborough Club for the Prince of Wales's circle. For dinner there were the Café Royal, Kettner's and Romano's. The Pelican Club in Gerrard Street, where Queensberry boxed, gave way in 1891 to the National Sporting Club in Covent Garden, which made prize-fighting respectable under the rules that bore Queensberry's name. Rotten Row in Hyde Park was the Season's parade ground for horses, carriages and courtesans, and in 1895 it filled with bicycles.",
+    "Sport and spectacle moved out along the railways and omnibus routes. W. G. Grace drew crowds to Lord's in St John's Wood, Test cricket came to the Oval in Kennington, lawn tennis began at Wimbledon in 1877, and the Boat Race started from Putney. Excursion trains carried crowds to the Crystal Palace at Sydenham, and omnibuses took families to the Zoo in Regent's Park, where the sale of Jumbo the elephant to Barnum in 1882 caused a national uproar. Wilde stood for aesthetics against athletics, a contrast the cartoonists enjoyed. Queensberry's world of the ring and the turf ran through the same streets, and it would bring him down."
+   ],
+   "start_places": [
+    {
+     "id": "st-james-st",
+     "note": "White's, Brooks's and Pall Mall"
+    },
+    {
+     "id": "national-sporting-club",
+     "note": "Boxing under the Queensberry Rules"
+    },
+    {
+     "id": "rotten-row",
+     "note": "The Season's parade, and bicycles"
+    },
+    {
+     "id": "lords",
+     "note": "W. G. Grace"
+    },
+    {
+     "id": "crystal-palace",
+     "note": "Fireworks, concerts and the Cup Final"
+    },
+    {
+     "id": "zoo",
+     "note": "The elephant sold to Barnum, 1882"
+    }
+   ]
+  },
+  {
+   "id": "faith",
+   "name": "Religion & spirits",
+   "source_chapters": "Chapter 8, 'Religion, Spirits, and Hosanna' (pp. 167–177)",
+   "summary": "The Church of England had lost the poor. London filled the gap with giant chapels, street armies, settlements, séances and Theosophy, each with its own corner of the map.",
+   "text": [
+    "Westminster Abbey and St Paul's staged the rituals of state, including Victoria's Jubilee services of 1887 and 1897, but the religious energy of the period lay elsewhere. South of the river, Charles Spurgeon preached to congregations of some six thousand at the Metropolitan Tabernacle by the Elephant and Castle. From headquarters in Queen Victoria Street, William Booth's Salvation Army marched with brass bands into the East End. Hawksmoor's Christ Church in Spitalfields stood among the lodging houses, where the homeless slept on the churchyard seats, and Barnardo ran his homes in Stepney.",
+    "The western and northern suburbs had their own seekers. Madame Blavatsky's Theosophical Society made its London headquarters at Annie Besant's house in Avenue Road, St John's Wood. Constance Wilde joined the Society, and Gandhi, a law student at the Inner Temple, met Blavatsky and Besant in London. Spiritualist séances were held in middle-class drawing rooms. Wilde's own path led to the Catholic Church: on the day of his release in 1897 he wrote to the Jesuits at Farm Street in Mayfair asking to make a retreat, and was refused. He was received into the Church on his deathbed in Paris in 1900."
+   ],
+   "start_places": [
+    {
+     "id": "westminster-abbey",
+     "note": "The Jubilee services"
+    },
+    {
+     "id": "metropolitan-tabernacle",
+     "note": "Spurgeon's six thousand"
+    },
+    {
+     "id": "salvation-army",
+     "note": "General Booth's army"
+    },
+    {
+     "id": "spitalfields",
+     "note": "Hawksmoor's church among the lodging houses"
+    },
+    {
+     "id": "avenue-road",
+     "note": "Blavatsky and Besant"
+    },
+    {
+     "id": "farm-street",
+     "note": "Wilde's request, 1897"
+    }
+   ]
+  }
+ ],
  "places": [
   {
    "id": "salisbury-st",
@@ -2937,7 +3299,7 @@
    "people": [],
    "images": [
     {
-     "caption": "Hyde Park (Knightsbridge) Barracks",
+     "caption": "Hyde Park (Knightsbridge) Barracks today: Basil Spence's 1970 rebuilding on the site of the Victorian cavalry barracks",
      "author": "Karl1587",
      "license": "Public domain",
      "file_page": "https://commons.wikimedia.org/wiki/File:Hyde_Park_Barracks.jpg",
@@ -5698,11 +6060,11 @@
    ],
    "images": [
     {
-     "caption": "Ye Olde Cheshire Cheese, from The Book of the Cheese",
+     "caption": "The dining room of Ye Olde Cheshire Cheese, with its high-backed settles, from The Book of the Cheese",
      "author": "Internet Archive Book Images",
      "license": "No known copyright restrictions",
-     "file_page": "https://commons.wikimedia.org/wiki/File:The_book_of_the_Cheese,_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22,_Wine_office_court,_Fleet_street,_London_(1920)_(14777715205).jpg",
-     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/The_book_of_the_Cheese%2C_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22%2C_Wine_office_court%2C_Fleet_street%2C_London_%281920%29_%2814777715205%29.jpg/960px-The_book_of_the_Cheese%2C_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22%2C_Wine_office_court%2C_Fleet_street%2C_London_%281920%29_%2814777715205%29.jpg"
+     "file_page": "https://commons.wikimedia.org/wiki/File:The_book_of_the_Cheese,_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22,_Wine_office_court,_Fleet_street,_London_(1920)_(14775375994).jpg",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/The_book_of_the_Cheese%2C_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22%2C_Wine_office_court%2C_Fleet_street%2C_London_%281920%29_%2814775375994%29.jpg/960px-The_book_of_the_Cheese%2C_being_traits_and_stories_of_%22Ye_olde_Cheshire_Cheese%22%2C_Wine_office_court%2C_Fleet_street%2C_London_%281920%29_%2814775375994%29.jpg"
     }
    ]
   },
@@ -6795,11 +7157,11 @@
    ],
    "images": [
     {
-     "caption": "City and South London Railway, engineering drawing, 1892",
-     "author": "James Henry Greathead (1844-1896)",
+     "caption": "Borough station on the new City & South London Railway, the world's first deep-level electric tube (Illustrated London News, 8 November 1890)",
+     "author": "The Illustrated London News",
      "license": "Public domain",
-     "file_page": "https://commons.wikimedia.org/wiki/File:City_and_South_London_Railway_Engineering_Drawing.jpg",
-     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/City_and_South_London_Railway_Engineering_Drawing.jpg/960px-City_and_South_London_Railway_Engineering_Drawing.jpg"
+     "file_page": "https://commons.wikimedia.org/wiki/File:Borough_station,_1890.jpg",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Borough_station%2C_1890.jpg/960px-Borough_station%2C_1890.jpg"
     }
    ]
   },

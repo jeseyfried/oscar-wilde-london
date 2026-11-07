@@ -17,11 +17,11 @@ Upload everything in this folder, keeping the structure. All paths are relative,
 - `css/site.css`: colours, type and layout (palette variables at the top).
 - `js/config.js`: **settings**, including the optional MapTiler key for the 1890s Ordnance Survey layer.
 - `js/core.js`: shared data and helpers. Theme names and colours are in `LAYERS`.
-- `js/story.js`: the scroll scene "Eighteen years".
+- `js/themes.js`: the full-width "Themes" carousel at the top of the page.
 - `js/explorer.js`: the main map, filters, year slider, place cards and walks.
 - `js/sections.js`: walk cards, chronicle, people, errata and bibliography.
 - `data/places-*.js`: **the 200 places**, one file per theme. Each entry gives name, address, coordinates, themes, years, summary, text, dated events, book page numbers (`b`), further-reading keys (`r`), people (`p`) and Commons search terms (`q`).
-- `data/sources.js`: bibliography for the `r` keys. `data/people.js`: people. `data/walks.js`: the eight walks. `data/story.js`: the scroll story. `data/errata.js`: where the book slips.
+- `data/sources.js`: bibliography for the `r` keys. `data/people.js`: people. `data/walks.js`: the eight walks. `data/themes.js`: the ten theme explanations, their "Start here" places and background pictures (edit the text there). `data/errata.js`: where the book slips.
 - `data/images.js`: illustrations with captions, authors, licences and Commons links. `credits.html` lists them all.
 - `data/owl.json`: everything in one machine-readable file (see `for-ai.html`).
 - `plain.html`: every entry as plain text.
