@@ -17,6 +17,7 @@ Upload everything in this folder, keeping the structure. All paths are relative,
 - `css/site.css`: colours, type and layout (palette variables at the top).
 - `js/config.js`: **settings**, including the optional MapTiler key for the 1890s Ordnance Survey layer.
 - `js/core.js`: shared data and helpers. Theme names and colours are in `LAYERS`.
+- `js/hero.js`: the animated opening section (counting figures, the ticker of places, the tilt of the portrait). Its look is in the "hero" part of `css/site.css`; the background map is `img/hero-map.jpg`.
 - `js/themes.js`: the full-width "Themes" carousel at the top of the page.
 - `js/explorer.js`: the main map, filters, year slider, place cards and walks.
 - `js/sections.js`: walk cards, chronicle, people, errata and bibliography.

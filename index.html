@@ -10,9 +10,9 @@
 <meta property="og:description" content="Two hundred places in the city that made Oscar Wilde, 1879–1897.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Cormorant+SC:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Cormorant+SC:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-<link rel="stylesheet" href="css/site.css?v=4">
+<link rel="stylesheet" href="css/site.css?v=5">
 <script>
   (function () {
     var m = null; try { m = localStorage.getItem('owl-motion'); } catch (e) {}
@@ -35,21 +35,50 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero__text">
-    <p class="hero__kicker">An interactive map · 1879–1897</p>
-    <h1 class="hero__title"><span>Oscar Wilde's</span> <em>London</em></h1>
-    <p class="hero__lede">In the autumn of 1879 a young Irishman with a first in Greats and very little money took rooms off the Strand. In the spring of 1897 he walked out of Pentonville and took the night boat to Dieppe. This map follows the city between those two dates: the theatres and the slums, the salons and the courts, the music halls, the scandals and the river.</p>
-    <p class="hero__count"><span id="countPlaces">200</span> places · <span id="countEvents">200</span> dated events · <span id="countWalks">8</span> walks · <span id="countPeople">100</span> people</p>
-    <p class="hero__actions">
-      <a class="btn btn--solid" href="#explore">Open the map</a>
-      <a class="btn" href="#themes">Explore the themes</a>
-      <a class="btn" href="#walks">Take a walk</a>
-    </p>
+  <!-- background: a detail of Stanford's Library Map of London, drifting slowly -->
+  <div class="hero__map" aria-hidden="true"><div class="hero__mapimg" id="heroMap"></div></div>
+
+  <div class="hero__inner">
+    <div class="hero__text">
+      <p class="hero__kicker"><span class="hero__kick1">An interactive map</span></p>
+      <h1 class="hero__title">
+        <span class="hero__pre">
+          <svg class="carnation" viewBox="0 0 64 120" aria-hidden="true" focusable="false">
+            <path class="carnation__stem" d="M32 66 C31 84 33 100 32 118"/>
+            <path class="carnation__leaf" d="M32 98 C24 92 15 89 7 83 C16 86 25 90 32 102"/>
+            <path class="carnation__leaf" d="M32 86 C40 80 48 77 57 71 C49 78 41 82 32 90"/>
+            <path class="carnation__calyx" d="M27.5 51 L29.6 66 L34.4 66 L36.5 51 Z M27 52 L24.5 46.5 L30 51 M37 52 L39.5 46.5 L34 51"/>
+            <path class="carnation__head" d="M23.0 51.0 L7.6 42.4 L14.4 41.9 L11.2 36.9 L17.8 38.0 L16.4 32.4 L22.4 35.1 L22.9 29.3 L27.7 33.4 L30.1 28.0 L33.4 33.0 L37.5 28.4 L39.0 34.1 L44.5 30.7 L44.0 36.4 L50.4 34.5 L48.1 39.9 L54.8 39.6 L50.8 44.2 L41.0 51.0 Z"/>
+            <path class="carnation__frill" d="M18.3 42.7 L23.1 43.3 L21.9 39.2 L26.2 41.1 L26.6 37.0 L30.0 40.0 L32.0 36.2 L34.0 40.0 L37.4 37.0 L37.8 41.1 L42.1 39.2 L40.9 43.3 L45.7 42.7"/>
+          </svg>
+          <span class="hero__pre-text">Oscar Wilde's</span>
+        </span>
+        <span class="hero__big" data-text="London">London</span>
+      </h1>
+      <p class="hero__dates" aria-label="1879 to 1897"><span>1879</span><i aria-hidden="true"></i><b aria-hidden="true">&#10086;</b><i aria-hidden="true"></i><span>1897</span></p>
+      <p class="hero__lede">In the autumn of 1879 a young Irishman with a first in Greats and very little money <mark>took rooms off the Strand</mark>. In the spring of 1897 he <mark>walked out of Pentonville</mark> and took the night boat to Dieppe. This map follows the city between those two dates: the theatres and the slums, the salons and the courts, the music halls, the scandals and the river.</p>
+      <p class="hero__count"><span><b id="countPlaces">200</b> places</span><span><b id="countEvents">200</b> dated events</span><span><b id="countWalks">8</b> walks</span><span><b id="countPeople">100</b> people</span></p>
+      <p class="hero__actions">
+        <a class="btn btn--solid" href="#explore">Open the map</a>
+        <a class="btn" href="#themes">Explore the themes</a>
+        <a class="btn" href="#walks">Take a walk</a>
+      </p>
+    </div>
+
+    <figure class="portrait" id="heroFigure">
+      <div class="portrait__card" id="heroCard">
+        <div class="portrait__mount">
+          <img id="heroImg" src="img/hero-1.jpg" width="1280" height="2127" alt="Oscar Wilde photographed by Napoleon Sarony in New York, 1882: seated, in a fur-trimmed coat, his head resting on his hand.">
+        </div>
+        <figcaption class="portrait__label" id="heroCap">Oscar Wilde photographed by Napoleon Sarony, New York, 1882. Public domain.</figcaption>
+      </div>
+    </figure>
   </div>
-  <figure class="hero__figure" id="heroFigure">
-    <img id="heroImg" src="img/hero.jpg" alt="Oscar Wilde photographed by Napoleon Sarony in New York, 1882, seated, in a fur-trimmed coat.">
-    <figcaption id="heroCap">Oscar Wilde photographed by Napoleon Sarony, New York, 1882. Library of Congress (public domain).</figcaption>
-  </figure>
+
+  <div class="ticker" aria-label="Some of the places on the map">
+    <div class="ticker__track" id="heroTicker"></div>
+  </div>
+  <p class="hero__mapcredit">Map: Stanford's <cite>Library Map of London</cite>, Chelsea Reach (David Rumsey Map Collection, public domain) · <a href="credits.html">credits</a></p>
 </header>
 
 <main>
@@ -180,25 +209,26 @@
 </div>
 
 <script src="vendor/leaflet/leaflet.js"></script>
-<script src="js/config.js?v=4"></script>
-<script src="data/sources.js?v=4"></script>
-<script src="data/people.js?v=4"></script>
-<script src="data/places-wilde.js?v=4"></script>
-<script src="data/places-queer-night.js?v=4"></script>
-<script src="data/places-stage.js?v=4"></script>
-<script src="data/places-aesthetic.js?v=4"></script>
-<script src="data/places-letters.js?v=4"></script>
-<script src="data/places-growth.js?v=4"></script>
-<script src="data/places-shame.js?v=4"></script>
-<script src="data/places-pleasure.js?v=4"></script>
-<script src="data/places-extra.js?v=4"></script>
-<script src="data/walks.js?v=4"></script>
-<script src="data/themes.js?v=4"></script>
-<script src="data/errata.js?v=4"></script>
-<script src="data/images.js?v=4"></script>
-<script src="js/core.js?v=4"></script>
-<script src="js/explorer.js?v=4"></script>
-<script src="js/sections.js?v=4"></script>
-<script src="js/themes.js?v=4"></script>
+<script src="js/config.js?v=5"></script>
+<script src="data/sources.js?v=5"></script>
+<script src="data/people.js?v=5"></script>
+<script src="data/places-wilde.js?v=5"></script>
+<script src="data/places-queer-night.js?v=5"></script>
+<script src="data/places-stage.js?v=5"></script>
+<script src="data/places-aesthetic.js?v=5"></script>
+<script src="data/places-letters.js?v=5"></script>
+<script src="data/places-growth.js?v=5"></script>
+<script src="data/places-shame.js?v=5"></script>
+<script src="data/places-pleasure.js?v=5"></script>
+<script src="data/places-extra.js?v=5"></script>
+<script src="data/walks.js?v=5"></script>
+<script src="data/themes.js?v=5"></script>
+<script src="data/errata.js?v=5"></script>
+<script src="data/images.js?v=5"></script>
+<script src="js/core.js?v=5"></script>
+<script src="js/explorer.js?v=5"></script>
+<script src="js/sections.js?v=5"></script>
+<script src="js/themes.js?v=5"></script>
+<script src="js/hero.js?v=5"></script>
 </body>
 </html>
