@@ -4,7 +4,7 @@
    HISTORIC_TILESET: the MapTiler tileset id. 'uk-osgb1888' is the NLS Ordnance Survey 1888–1913 series.
    If your MapTiler account lists the NLS London five-foot plan (1893–96), paste its id here instead. */
 window.OWL_CONFIG = {
-  MAPTILER_KEY: "",
+  MAPTILER_KEY: "oZW3CWyxgvXvP47EpLme",
   HISTORIC_TILESET: "uk-osgb1888",
   HISTORIC_LABEL: "Ordnance Survey, 1888–1913",
   START: { lat: 51.5105, lng: -0.1330, zoom: 14 }
