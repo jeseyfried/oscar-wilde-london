@@ -17,8 +17,8 @@
 
   var map = L.map(el, { zoomControl: false, attributionControl: true, scrollWheelZoom: false, dragging: false, touchZoom: false, doubleClickZoom: false, boxZoom: false, keyboard: false })
     .setView(O.BY_ID[S[0].id].ll, 14);
-  var t = O.baseLayers(map); t.modern.addTo(map);
-  el.classList.add('period');
+  var t = O.baseLayers(map);
+  if (t.historic) t.historic.addTo(map); else { t.modern.addTo(map); el.classList.add('period'); }
 
   var pts = S.map(function (s) { return O.BY_ID[s.id].ll; });
   var trail = L.polyline([], { color: '#a8321f', weight: 3, opacity: .85 }).addTo(map);
