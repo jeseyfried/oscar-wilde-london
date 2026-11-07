@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plain page · Oscar Wilde's London</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; max-width: 44rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #222; background: #fff; }
+  h1 { font-weight: normal; } h2 { margin-top: 2.5rem; border-bottom: 1px solid #ccc; } h3 { margin-bottom: .2rem; }
+  .meta { color: #666; font-size: .9rem; margin: 0 0 .5rem; } .src { font-size: .85rem; color: #555; }
+  nav a { margin-right: 1rem; }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Back to the interactive site</a><a href="credits.html">Image credits</a><a href="data/owl.json">Data (JSON)</a></nav>
+<h1>Oscar Wilde's London: all places, as plain text</h1>
+<p>Every entry from the interactive map, grouped by theme, with no map, scripts beyond this list, or images. Page numbers refer to Wolf Von Eckardt, Sander L. Gilman and J. Edward Chamberlin, <cite>Oscar Wilde's London</cite> (1987).</p>
+<div id="out"></div>
+<script src="data/sources.js"></script>
+<script src="data/places-wilde.js"></script><script src="data/places-queer-night.js"></script><script src="data/places-stage.js"></script>
+<script src="data/places-aesthetic.js"></script><script src="data/places-letters.js"></script><script src="data/places-growth.js"></script>
+<script src="data/places-shame.js"></script><script src="data/places-pleasure.js"></script><script src="data/places-extra.js"></script>
+<script>
+(function () {
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var L = [['wilde', "Wilde's footsteps"], ['queer', 'Queer London'], ['stage', 'Stage & song'], ['aesthetic', 'Art & Aestheticism'], ['letters', 'Readers & writers'], ['growth', 'The growing city'], ['shame', "London's shame"], ['night', 'Juliets of a night'], ['pleasure', 'Pleasures & sport'], ['faith', 'Religion & spirits']];
+  var S = window.OWL_SOURCES || {}, P = window.OWL_PLACES || [], html = [];
+  L.forEach(function (l) {
+    var ps = P.filter(function (p) { return p.L[0] === l[0]; }).sort(function (a, b) { return a.y[0] - b.y[0] || a.n.localeCompare(b.n); });
+    html.push('<h2>' + esc(l[1]) + ' (' + ps.length + ')</h2>');
+    ps.forEach(function (p) {
+      html.push('<article id="' + p.id + '"><h3>' + esc(p.n) + '</h3><p class="meta">' + esc(p.a) + ' · ' + (p.y[0] === p.y[1] ? p.y[0] : p.y[0] + '–' + p.y[1]) + '</p><p><em>' + esc(p.s) + '</em></p>' +
+        p.t.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') +
+        (p.ev.length ? '<ul>' + p.ev.map(function (e) { return '<li>' + e[0] + (e[1] ? ', ' + esc(e[1]) : '') + ': ' + esc(e[2]) + '</li>'; }).join('') + '</ul>' : '') +
+        '<p class="src">' + (p.b.length ? 'Book: pp. ' + p.b.join(', ') + '. ' : '') + p.r.map(function (k) { return S[k] ? esc(S[k].short) : ''; }).join('; ') + '</p></article>');
+    });
+  });
+  document.getElementById('out').innerHTML = html.join('');
+})();
+</script>
+</body>
+</html>

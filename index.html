@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oscar Wilde's London · an interactive map, 1879–1897</title>
+<meta name="description" content="An interactive map of the London that made Oscar Wilde: two hundred places from his homes and premieres to the music halls, slums, scandals and prisons of 1879–1897, built from von Eckardt, Gilman and Chamberlin's Oscar Wilde's London.">
+<meta name="theme-color" content="#1f3b30">
+<meta property="og:title" content="Oscar Wilde's London">
+<meta property="og:description" content="Two hundred places in the city that made Oscar Wilde, 1879–1897.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Cormorant+SC:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/site.css">
+<script>
+  (function () {
+    var m = null; try { m = localStorage.getItem('owl-motion'); } catch (e) {}
+    var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (m === 'off' || (m === null && reduced)) document.documentElement.classList.add('still');
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#explore">Skip to the map</a>
+
+<nav class="topnav" aria-label="Sections">
+  <a class="brand" href="#top">Oscar Wilde's London</a>
+  <a href="#story">Eighteen years</a>
+  <a href="#explore">The map</a>
+  <a href="#walks">Walks</a>
+  <a href="#chronicle">Chronicle</a>
+  <a href="#people">People</a>
+  <a href="#book">The book</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__text">
+    <p class="hero__kicker">An interactive map · 1879–1897</p>
+    <h1 class="hero__title"><span>Oscar Wilde's</span> <em>London</em></h1>
+    <p class="hero__lede">In the autumn of 1879 a young Irishman with a first in Greats and very little money took rooms off the Strand. In the spring of 1897 he walked out of Pentonville and took the night boat to Dieppe. This map follows the city between those two dates: the theatres and the slums, the salons and the courts, the music halls, the scandals and the river.</p>
+    <p class="hero__count"><span id="countPlaces">200</span> places · <span id="countEvents">200</span> dated events · <span id="countWalks">8</span> walks · <span id="countPeople">100</span> people</p>
+    <p class="hero__actions">
+      <a class="btn btn--solid" href="#explore">Open the map</a>
+      <a class="btn" href="#walks">Take a walk</a>
+    </p>
+  </div>
+  <figure class="hero__figure" id="heroFigure">
+    <img id="heroImg" src="img/hero.jpg" alt="Oscar Wilde photographed by Napoleon Sarony in New York, 1882, seated, in a fur-trimmed coat.">
+    <figcaption id="heroCap">Oscar Wilde photographed by Napoleon Sarony, New York, 1882. Library of Congress (public domain).</figcaption>
+  </figure>
+</header>
+
+<main>
+  <section class="intro" aria-labelledby="introTitle">
+    <h2 id="introTitle">The city that made Oscar Wilde</h2>
+    <p>"This book is not about Oscar Wilde," begins Wolf Von Eckardt, Sander Gilman and J. Edward Chamberlin's <cite>Oscar Wilde's London</cite> (1987). It is about the city around him. Their book is a scrapbook of vices and virtues: Aestheticism and Morris wallpaper, Irving at the Lyceum and Marie Lloyd in the halls, Booth's poverty maps and the Ripper, Jumbo the elephant and W. G. Grace, Stead's "Maiden Tribute" and the Cleveland Street scandal.</p>
+    <p>This site puts their London on a map. Every place below cites the pages of the book it draws on. Where the book is silent, as it often is about Wilde's own movements and about queer London, the entry draws on scholarship and names its sources. Where the book gets something wrong, the entry says so (<a href="#book">see "Where the book slips"</a>).</p>
+  </section>
+
+  <!-- SCENE: Eighteen years -->
+  <section class="scene" id="story" aria-labelledby="storyTitle">
+    <div class="scene__sticky">
+      <div class="scene__map" id="storyMap" role="img" aria-label="Map following Oscar Wilde's London addresses, 1879 to 1897"></div>
+      <div class="scene__year" id="storyYear" aria-hidden="true">1879</div>
+    </div>
+    <div class="scene__steps" id="storySteps">
+      <div class="step step--title"><h2 id="storyTitle">Eighteen years, from the Strand to Pentonville</h2><p>Scroll to follow Wilde from address to address. The red line traces his route across the city.</p></div>
+    </div>
+  </section>
+
+  <!-- EXPLORER -->
+  <section class="explore" id="explore" aria-labelledby="exploreTitle">
+    <div class="explore__head">
+      <h2 id="exploreTitle">The map</h2>
+      <p>Choose themes, move through the years, or search. Select a place to read its story.</p>
+    </div>
+    <div class="explorer">
+      <aside class="panel" aria-label="Filters and places">
+        <div class="panel__search">
+          <label class="visually-hidden" for="q">Search places, people and events</label>
+          <input id="q" type="search" placeholder="Search: Savoy, Whistler, 1888, opium…" autocomplete="off">
+        </div>
+        <div class="chips" id="layerChips" role="group" aria-label="Themes"></div>
+        <div class="years">
+          <div class="years__row">
+            <label for="year" class="years__label">Year <output id="yearOut">all</output></label>
+            <button type="button" class="mini" id="yearAll" aria-pressed="true">All years</button>
+            <button type="button" class="mini" id="yearPlay" aria-label="Play through the years">▶ Play</button>
+          </div>
+          <input id="year" type="range" min="1879" max="1897" step="1" value="1879" aria-describedby="yearHelp">
+          <p class="years__help" id="yearHelp">Places that mattered in the chosen year stay lit. A ring marks places where something happened that year.</p>
+        </div>
+        <p class="panel__count" id="listCount" aria-live="polite"></p>
+        <ol class="plist" id="placeList"></ol>
+      </aside>
+      <div class="mapwrap">
+        <div id="map" class="map" aria-label="Map of places"></div>
+        <div class="basemaps" role="group" aria-label="Base map">
+          <button type="button" class="bm" data-bm="modern" aria-pressed="false">Today</button>
+          <button type="button" class="bm" data-bm="period" aria-pressed="true">Sepia</button>
+          <button type="button" class="bm" data-bm="historic" aria-pressed="false" id="bmHistoric" hidden>1890s survey</button>
+        </div>
+        <div class="walkbar" id="walkBar" hidden>
+          <button type="button" class="mini" id="walkPrev" aria-label="Previous stop">‹</button>
+          <div class="walkbar__text"><strong id="walkTitle"></strong><span id="walkStep"></span></div>
+          <button type="button" class="mini" id="walkNext" aria-label="Next stop">›</button>
+          <button type="button" class="mini" id="walkClose" aria-label="End walk">✕</button>
+        </div>
+      </div>
+      <article class="card" id="card" aria-live="polite" tabindex="-1">
+        <div class="card__empty">
+          <p class="card__hint">Select a place on the map or in the list.</p>
+          <p>Or start with <a href="#" data-goto="tite-16">16 Tite Street</a>, <a href="#" data-goto="albemarle-club">the Albemarle Club</a>, <a href="#" data-goto="cleveland-st">Cleveland Street</a>, <a href="#" data-goto="empire">the Empire promenade</a> or <a href="#" data-goto="zoo">Jumbo at the Zoo</a>.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="walks" id="walks" aria-labelledby="walksTitle">
+    <h2 id="walksTitle">Walks</h2>
+    <p class="lede">Each walk strings places together in order and opens on the map, with a line of narration at every stop. Most can be walked on foot today. The fall reaches from Chelsea to Holloway and needs a few trains.</p>
+    <div class="walkgrid" id="walkGrid"></div>
+  </section>
+
+  <section class="chronicle" id="chronicle" aria-labelledby="chronTitle">
+    <h2 id="chronTitle">Chronicle</h2>
+    <p class="lede">Every dated event in the map, year by year. Choose a year to see what was happening in Wilde's London.</p>
+    <div class="yearbar" id="yearBar" role="tablist" aria-label="Year"></div>
+    <ol class="chron" id="chronList"></ol>
+  </section>
+
+  <section class="people" id="people" aria-labelledby="peopleTitle">
+    <h2 id="peopleTitle">People</h2>
+    <p class="lede">The men and women who appear in the entries. Select a name to see their places on the map.</p>
+    <div class="peoplegrid" id="peopleGrid"></div>
+  </section>
+
+  <section class="book" id="book" aria-labelledby="bookTitle">
+    <h2 id="bookTitle">About the book, and this map</h2>
+    <div class="book__cols">
+      <div>
+        <h3>The source</h3>
+        <p>Wolf Von Eckardt, Sander L. Gilman and J. Edward Chamberlin, <cite>Oscar Wilde's London: A Scrapbook of Vices and Virtues, 1880–1900</cite> (1987). An urban critic, a cultural historian and a literary scholar wrote it as twelve themed chapters, from "Lilies and Sunflowers" to "Juliets of a Night", with hundreds of period pictures.</p>
+        <p>This map was built by reading the whole book from its scanned text and recording every London place it names, with the printed page number. Where an entry says "the book", it means this one. Numbers in the <em>Sources</em> line of each entry are its pages.</p>
+        <h3>Beyond the book</h3>
+        <p>The book says little about Wilde's own movements or about queer London. Those entries draw on Wilde scholarship (Ellmann, Sturgis, Holland, Bristow, the <cite>Complete Letters</cite>), the history of sexuality (Cook, Kaplan, Upchurch, Weeks, Walkowitz) and histories of London (White, Fishman, Koven, Rappaport). They are cited as further reading. A digitised archive of 1895 press reports settled one disagreement over the trial evidence.</p>
+        <h3>Images</h3>
+        <p>All illustrations are public domain or openly licensed, from Wikimedia Commons, with the artist and licence given beneath each and listed on the <a href="credits.html">credits page</a>. The book's own reproductions are still in copyright and are not used. Their captions were used to track down originals.</p>
+      </div>
+      <div>
+        <h3>Where the book slips</h3>
+        <p>Places where the 1987 text disagrees with the record, found while building the map:</p>
+        <ol class="errata" id="errata"></ol>
+        <h3>A caution</h3>
+        <p>This map was compiled with an AI model and checked against its sources, but it is a guide, not an authority. Locations marked "approximate" are placed by street or district, not by doorway. Please verify anything you cite.</p>
+      </div>
+    </div>
+    <details class="biblio">
+      <summary>Bibliography</summary>
+      <ol id="biblio"></ol>
+    </details>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Built from von Eckardt, Gilman and Chamberlin, <cite>Oscar Wilde's London</cite> (1987), with further scholarship as cited. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, tiles © <a href="https://carto.com/attributions">CARTO</a><span id="nlsCredit" hidden>; historic map courtesy of the <a href="https://maps.nls.uk/">National Library of Scotland</a></span>. Images: <a href="credits.html">credits and licences</a>.</p>
+  <p class="foot__links"><a href="plain.html">Plain page</a> · <a href="for-ai.html">For AI agents</a> · <a href="data/owl.json">Data (JSON)</a> · <a href="#top">Back to the top</a></p>
+  <div class="toggles" role="group" aria-label="Page settings">
+    <button type="button" class="toggle" id="toggleMotion" aria-pressed="true">Motion on</button>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image">
+  <button type="button" class="lightbox__close" id="lbClose" aria-label="Close">✕</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="js/config.js"></script>
+<script src="data/sources.js"></script>
+<script src="data/people.js"></script>
+<script src="data/places-wilde.js"></script>
+<script src="data/places-queer-night.js"></script>
+<script src="data/places-stage.js"></script>
+<script src="data/places-aesthetic.js"></script>
+<script src="data/places-letters.js"></script>
+<script src="data/places-growth.js"></script>
+<script src="data/places-shame.js"></script>
+<script src="data/places-pleasure.js"></script>
+<script src="data/places-extra.js"></script>
+<script src="data/walks.js"></script>
+<script src="data/story.js"></script>
+<script src="data/errata.js"></script>
+<script src="data/images.js"></script>
+<script src="js/core.js"></script>
+<script src="js/story.js"></script>
+<script src="js/explorer.js"></script>
+<script src="js/sections.js"></script>
+</body>
+</html>

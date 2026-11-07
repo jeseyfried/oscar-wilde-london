@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image credits · Oscar Wilde's London</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Cormorant+SC:wght@600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  .credits { max-width: 70rem; margin: 0 auto; padding: 2rem var(--gutter) 4rem; }
+  .credits table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  .credits th, .credits td { text-align: left; vertical-align: top; padding: .45rem .5rem; border-bottom: 1px solid var(--rule); }
+  .credits th { font-family: var(--sc); font-size: 1rem; }
+  .credits img { width: 72px; height: 54px; object-fit: cover; background: var(--paper-3); }
+  .credits td.lic { white-space: nowrap; }
+</style>
+</head>
+<body>
+<nav class="topnav"><a class="brand" href="index.html">Oscar Wilde's London</a><a href="index.html#explore">The map</a><a href="plain.html">Plain page</a></nav>
+<main class="credits">
+  <h1>Image credits and licences</h1>
+  <p class="lede">Every illustration on this site comes from Wikimedia Commons and is in the public domain or under a Creative Commons licence. The book's own reproductions, still in copyright, are not used. Select a file name to see the full licence and source on Commons. CC BY and CC BY-SA images are credited to the author named here, under the licence given.</p>
+  <p id="count"></p>
+  <table><thead><tr><th></th><th>Caption (place)</th><th>Author / source</th><th>Licence</th><th>Commons file</th></tr></thead><tbody id="rows"></tbody></table>
+</main>
+<script src="data/places-wilde.js"></script><script src="data/places-queer-night.js"></script><script src="data/places-stage.js"></script>
+<script src="data/places-aesthetic.js"></script><script src="data/places-letters.js"></script><script src="data/places-growth.js"></script>
+<script src="data/places-shame.js"></script><script src="data/places-pleasure.js"></script><script src="data/places-extra.js"></script>
+<script src="data/images.js"></script>
+<script>
+(function () {
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var by = {}; (window.OWL_PLACES || []).forEach(function (p) { by[p.id] = p; });
+  var rows = [], n = 0;
+  function row(im, pname, pid) {
+    n++;
+    return '<tr><td><img loading="lazy" src="' + esc(im.f) + '" alt=""></td><td>' + esc(im.t) + (pid ? '<br><a href="index.html#place=' + pid + '">' + esc(pname) + '</a>' : '') + '</td><td>' + esc(im.a) + '</td><td class="lic">' + esc(im.l) + '</td><td><a href="' + esc(im.u) + '">' + esc(im.src) + '</a></td></tr>';
+  }
+  if (window.OWL_HERO) rows.push(row(window.OWL_HERO, 'Front page', null));
+  Object.keys(window.OWL_IMAGES || {}).sort(function (a, b) { return (by[a] ? by[a].n : a).localeCompare(by[b] ? by[b].n : b); }).forEach(function (pid) {
+    window.OWL_IMAGES[pid].forEach(function (im) { rows.push(row(im, by[pid] ? by[pid].n : pid, pid)); });
+  });
+  document.getElementById('rows').innerHTML = rows.join('');
+  document.getElementById('count').textContent = n + ' images.';
+})();
+</script>
+</body>
+</html>
