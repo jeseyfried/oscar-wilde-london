@@ -81,14 +81,17 @@
   // tile layers shared by both maps
   function baseLayers(map) {
     var cfg = window.OWL_CONFIG || {};
-    var modern = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19, subdomains: 'abcd',
-      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>'
-    });
+    // Today's map. CARTO's free tiles now need their own API key, so with a MapTiler key we use
+    // MapTiler's Voyager style (same look); without one we fall back to the standard OpenStreetMap tiles.
+    var osm = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+    var modern = cfg.MAPTILER_KEY
+      ? L.tileLayer('https://api.maptiler.com/maps/' + (cfg.MODERN_STYLE || 'voyager') + '/256/{z}/{x}/{y}.png?key=' + cfg.MAPTILER_KEY, {
+          maxZoom: 19, attribution: '© <a href="https://www.maptiler.com/copyright/">MapTiler</a> ' + osm })
+      : L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: osm });
     var historic = null;
     if (cfg.MAPTILER_KEY) {
       historic = L.tileLayer('https://api.maptiler.com/tiles/' + cfg.HISTORIC_TILESET + '/{z}/{x}/{y}.jpg?key=' + cfg.MAPTILER_KEY, {
-        maxZoom: 19, attribution: 'Historic map courtesy of the <a href="https://maps.nls.uk/">National Library of Scotland</a> via MapTiler'
+        maxZoom: 19, maxNativeZoom: 17, attribution: 'Historic map courtesy of the <a href="https://maps.nls.uk/">National Library of Scotland</a> via MapTiler'
       });
     }
     return { modern: modern, historic: historic };

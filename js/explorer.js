@@ -22,11 +22,11 @@
     if (tiles.historic) { if (which === 'historic') { map.removeLayer(tiles.modern); tiles.historic.addTo(map); } else { map.removeLayer(tiles.historic); if (!map.hasLayer(tiles.modern)) tiles.modern.addTo(map); } }
     mapEl.classList.toggle('period', which === 'period');
     bmButtons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-bm') === which ? 'true' : 'false'); });
-    O.store('owl-base', which);
+    O.store('owl-base2', which);
   }
   if (tiles.historic) { document.getElementById('bmHistoric').hidden = false; var nc = document.getElementById('nlsCredit'); if (nc) nc.hidden = false; }
   bmButtons.forEach(function (b) { b.addEventListener('click', function () { setBase(b.getAttribute('data-bm')); }); });
-  setBase(O.read('owl-base') || 'period');
+  setBase(O.read('owl-base2') || (tiles.historic ? 'historic' : 'period'));
 
   var markers = {};
   var ringLayer = L.layerGroup().addTo(map);
